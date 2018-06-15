@@ -2,6 +2,8 @@
 #include <vector>
 #include <string>
 #include <cstdbool>
+#include <set>
+#include <queue>
 
 using namespace std;
 bool removeInvalidParanthesis(string);
@@ -11,25 +13,36 @@ bool isParanthesis(char);
 
 int main(){
     string s; cout<<"Input: "; cin>> s;
-    removeInvalidParanthesis(s);
+    if(!removeInvalidParanthesis(s)){
+        cout<<"No result."<<endl;
+    }
     return 0 ;
 }
 
 bool removeInvalidParanthesis(string s){
-    if(isValidParanthesis(s)){
-        cout<<"RESULT: "<<s <<endl ;
-        return true;
-    }else{
-        for(int i=0; i<s.length(); i++){
-            if(isParanthesis(s[i])){
-                string rest = s.substr(0,i) + s.substr(i+1);
-                if(removeInvalidParanthesis(rest)){
-                    return true;
+    queue<string> q; //for bfs, for minimal removal
+    set<string> visited; //for efficiency
+    q.push(s);
+    while(!q.empty()){
+        string curr = q.front(); 
+        q.pop();
+        if(isValidParanthesis(curr)){
+            cout<<"RESULT: "<< curr <<endl ;
+            return true;
+        }else{
+            for(int i=0; i<curr.length(); i++){
+                if(isParanthesis(curr[i])){
+                    string rest = curr.substr(0,i) + curr.substr(i+1) ;
+                    if(visited.find(rest) == visited.end()){
+                        q.push(rest);
+                        visited.insert(rest);
+                    }   
                 }
             }
         }
-        return false;
     }
+    return false;
+    
 }
 
 
