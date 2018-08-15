@@ -18,13 +18,13 @@ void print_array(int solution[N][N]){
 bool solve(int maze[N][N], int solution[N][N], int row, int col){
     //base cases -> can't go if wall, boundary, already visited(previous path),
     //or reached destination
-    if(maze[row][col] == 0){
+    if(maze[row][col] == 0){ //wall
         return false;
     }
-    if(maze[row][col] == 2){
+    if(maze[row][col] == 2){ //already visited
         return false;
     }
-    if((row < 0) || (col < 0)  || (row > N-1) || (col > N-1)){
+    if((row < 0) || (col < 0)  || (row > N-1) || (col > N-1)){ //boundary
         return false;
     }  
     if((row == N-1) && (col == N-1)){ //end point

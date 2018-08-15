@@ -1,3 +1,8 @@
+// Given a binary tree, compute its "maxDepth" -- 
+//the number of nodes along the longest path from the root node down to the farthest leaf node. 
+
+// int maxDepth(struct node* node) {
+
 #include <iostream>
 #include <cstdbool>
 #include <vector>

@@ -12,6 +12,13 @@ INPUT:
 8 0 0 0 0 5 0 0 0
 0 0 0 0 0 0 0 0 5
 
+Logic:
+#1. get the empty position from sudoku box,
+#2. for each 1-9 numbers, check if anyone can be placed at the empty position
+#3. if yes, continue from #1
+#4. else, remove it, continue with another number (from #2)
+#5. Done, if no empty location found. |or| Can't be done, if no element can be put at the first empty position itself. 
+
 */
 
 #include <iostream>
@@ -67,10 +74,11 @@ void print_2d_iv(vector<vector<int> > &v){
     }
 }
 
+
 bool solve(vector<vector<int> > &v){
     int row, col;
     //if no more steps
-    if(!get_empty_place(v, row, col)){
+    if(!get_empty_place(v, row, col)){ //Note: we have the row and col of empty place, if it exists.
         print_2d_iv(v);
         return true;
     }else{
