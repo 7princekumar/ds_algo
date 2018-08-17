@@ -1,4 +1,4 @@
- //TRAVERSE IN POST-ORDER only, other dfs traversal may not give correct result for all trees
+ //TRAVERSE IN any-traveral form, post,pre, in order.
 #include <iostream>
 #include <cstdbool>
 #include <vector>
