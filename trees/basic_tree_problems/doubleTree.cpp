@@ -99,7 +99,7 @@ void double_tree(NODE root){
 
         //create a node with save value as root's data, attatch it as the left child
         NODE temp = new_node(root->data);
-        temp->left = root->left;
-        root->left = temp;
+        temp->left = root->left; //first attach what will be unattached soon
+        root->left = temp; //now attach this
     }
 }
