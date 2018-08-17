@@ -1,3 +1,4 @@
+ //TRAVERSE IN POST-ORDER only, other dfs traversal may not give correct result for all trees
 #include <iostream>
 #include <cstdbool>
 #include <vector>
@@ -53,7 +54,7 @@ void print_i_v(vector<int> v){
 }
 
 void print_bottom_view(NODE);
-void bottom_view(NODE, map<int, vector<int> > &, int);
+void bottom_view(NODE, map<int, vector<int> > &, int); 
 int height_of_tree(NODE);
 
 int main(){
