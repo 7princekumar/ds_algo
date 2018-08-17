@@ -61,12 +61,17 @@ NODE create_default_tree(){
     return root;
 }
 
-void print_paths(NODE, vector<int>) ;
+void print_paths(NODE, vector<int>);
+void pp(NODE, vector<int>);
 
 int main(){
     NODE root = create_default_tree();
     vector<int> paths;
-    print_paths(root, paths) ;
+    print_paths(root, paths);
+
+    paths.clear();
+    cout<<"\n";
+    pp(root, paths);
 
     return 0;
 }
@@ -90,5 +95,17 @@ void print_paths(NODE root, vector<int> curr_path){
             print_paths(root->left, curr_path);
         if(root->right != NULL)
             print_paths(root->right, curr_path);
+    }
+}
+
+void pp(NODE root, vector<int> cp){
+    if(root == NULL) return; //VERY IMPORTANT LINE
+    if((root->left == NULL) && (root->right == NULL)){
+        cp.push_back(root->data);
+        print_i_v(cp);
+    }else{
+        cp.push_back(root->data);
+        pp(root->left, cp);
+        pp(root->right, cp);
     }
 }
