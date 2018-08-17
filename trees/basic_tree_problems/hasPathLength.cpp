@@ -14,9 +14,12 @@ Root-to-leaf paths:
    path 1: 5 4 11 7
    path 2: 5 4 11 2
    path 3: 5 8 13
-   path 4: 5 8 4 1
-For this problem, we will be concerned with the sum of the values of such a path -- for example, the sum of the values on the 5-4-11-7 path is 5 + 4 + 11 + 7 = 27.
-Given a binary tree and a sum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum. Return false if no such path can be found. (Thanks to Owen Astrachan for suggesting this problem.)
+   path 4: 5 8 4  1
+For this problem, we will be concerned with the sum of the values of such a path --
+for example, the sum of the values on the 5-4-11-7 path is 5 + 4 + 11 + 7 = 27.
+Given a binary tree and a sum, return true if the tree has a root-to-leaf path such 
+that adding up all the values along the path equals the given sum. Return false if no 
+such path can be found. 
 
 int hasPathSum(struct node* node, int sum) {
 */
