@@ -12,16 +12,16 @@ void print_i_v(vector<string> &v){
     cout<<endl;
 }
 
-string rev_string(string s){
+string rev_string(string s){ //reverse string and leaves the special char at that position only
     int i=0; int j = s.length();
     while(i<j){
-        while(!isalpha(s[i])){
+        while(!isalpha(s[i])){ //skip special char from left
             i++;
         }
-        while(!isalpha(s[j])){
+        while(!isalpha(s[j])){ //skip special char from right
             j--;
         }
-        swap(s[i], s[j]);
+        swap(s[i], s[j]); //swap non-special char
         i++; j--;
         
     }
