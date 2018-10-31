@@ -61,7 +61,7 @@ void graph_dfs(unordered_map<int, vector<int> >& g, vector<bool>& visited ,int s
 
 
 int main(){
-    unordered_map<int, vector<int> > g; //graph with adj list
+    unordered_map<int, vector<int> > g;
     create_graph(g);
     cout <<"Graph: \n"; print_graph(g);
 
