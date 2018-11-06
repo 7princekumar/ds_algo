@@ -51,7 +51,7 @@ void fill_stack(GRAPH& g, int src, vector<bool>& visited, stack<int>& s){
     visited[src] = true;
 
     //do dfs(fill_stack) for all it's neighbours
-    vector<int>& v = g[src];
+    vector<int>& v = g[src]; //src-->v1,v2,...
     for(int i=0; i<v.size(); i++){
         if(!visited[v[i]]){
             fill_stack(g, v[i], visited, s);
