@@ -4,14 +4,13 @@ using namespace std;
 
 //from left to right
 int lcs(string s1, int i, string s2, int j){
-    //if end
     if( (i==s2.length()) || (j==s1.length()) ) 
         return 0; 
-    //if matches
-    if( s1[i]==s2[j] ) 
+    if( s1[i]==s2[j] ) {//if matches
         return 1 + lcs(s1,i+1, s2, j+1);
-    //if does not match
-    return max(lcs(s1,i, s2, j+1),lcs(s1,i+1, s2, j));
+    }else{ //if doesn't match
+        return max(lcs(s1,i, s2, j+1),lcs(s1,i+1, s2, j));
+    } 
 }
 
 int main(){

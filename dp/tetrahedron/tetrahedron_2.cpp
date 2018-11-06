@@ -55,5 +55,6 @@ int main(){
     int n; cin >> n;
     cout << solve(n) << endl;
     print_i_2v(dp, n);
+    
     return 0;
 }
