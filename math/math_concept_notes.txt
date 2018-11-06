@@ -1,0 +1,7 @@
+Notes:
+For checking if a file lies inside a polygon or not, 
+Use this:
+1. total_area = area of the polygon
+2. area1 = make a triangle with 1-edge and the point inside the polygon.
+   so..
+   if (total_area == area1 + area2 + .... + area_n) point is inside
