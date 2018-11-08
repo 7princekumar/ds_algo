@@ -1,3 +1,4 @@
+//COMPLICATED, use the one in the BFS folder
 #include <iostream>
 #include <vector>
 #include <string>
@@ -24,8 +25,7 @@ bool removeInvalidParanthesis(string s){
     set<string> visited; //for efficiency
     q.push(s);
     while(!q.empty()){
-        string curr = q.front(); 
-        q.pop();
+        string curr = q.front(); q.pop();
         if(isValidParanthesis(curr)){
             cout<<"RESULT: "<< curr <<endl ;
             return true;
