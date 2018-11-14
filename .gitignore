@@ -1,2 +1,3 @@
 #except cpp files
 !*.cpp
+!resouces_library
