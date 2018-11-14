@@ -53,9 +53,12 @@ NODE get_middle_node(NODE head){
     if(head == NULL) return NULL;
     NODE s = head;        //slow 1x speed
     NODE f = head->next;  //fast 2x speed
-    while(f && f->next){
-        s = s->next;
-        f = f->next->next;
+    while(f != NULL){
+        f = f->next;
+        if(f != NULL){
+            f = f->next;
+            s = s->next;
+        }
     }
     return s;
 }
@@ -65,5 +68,8 @@ int main(){
     NODE head = create_default_ll();
     cout << "SLL: "; print_sll(head);
     
+    NODE middle = get_middle_node(head);
+    if(middle != NULL) cout << "Middle: " << middle->data << endl;
+    else cout << "Not found!" << endl;
     return 0;
 }
