@@ -131,9 +131,9 @@ void dijkstra(GRAPH& g, int src){
     pq.push(make_pair(0, src)); //wt as first element in pair
     
     while(!pq.empty()){
-        int u = pq.top().second; //min distance vertex
+        int u = pq.top().second; //min distance vertex, //initially src only
         pq.pop();
-        vector<ii>& adj = g[u];
+        vector<ii>& adj = g[u]; //take its neighbours // u(curr_src)-------wt------v
         for(int i=0; i<adj.size(); i++){
             int v  = adj[i].first; 
             int wt = adj[i].second;
