@@ -60,6 +60,7 @@ NODE get_middle_node(NODE head){
     return s;
 }
 
+//NOTE: front and back are ref variable!
 void front_back_split(NODE head, NODE& front, NODE& back){
     if(head == NULL) return;
     if(head->next == NULL){
