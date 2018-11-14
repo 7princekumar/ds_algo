@@ -49,42 +49,21 @@ void print_sll(NODE head){
     cout << endl;
 }
 
-
-//NOTE: front and back are ref variable!
-void front_back_split(NODE head, NODE& front, NODE& back){
-    if(head == NULL) return;
-    if(head->next == NULL){
-        front = head;
-        back = NULL;
-        return;
+NODE get_middle_node(NODE head){
+    if(head == NULL) return NULL;
+    NODE s = head;        //slow 1x speed
+    NODE f = head->next;  //fast 2x speed
+    while(f && f->next){
+        s = s->next;
+        f = f->next->next;
     }
-
-    //using two pointer approrach, 1x and 2x
-    NODE s = head;
-    NODE f = head->next;
-    while(f != NULL){
-        f = f->next;
-        if(f != NULL){
-            f = f->next;
-            s = s->next;
-        }
-    }
-    cout << "Middle Node: " << s->data << endl;
-    
-    //split
-    front = head;
-    back = s->next;
-    s->next = NULL;
+    return s;
 }
+
 
 int main(){
     NODE head = create_default_ll();
     cout << "SLL: "; print_sll(head);
     
-    NODE front = NULL;
-    NODE back = NULL;
-    front_back_split(head, front, back);
-    cout << "front: "; print_sll(front);
-    cout << "back:  ";  print_sll(back);
     return 0;
 }
