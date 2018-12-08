@@ -29,16 +29,6 @@ string rev_string(string s){ //reverse string and leaves the special char at tha
 }
 
 int main(){
-    char ch1[20];
-    char ch2[20];
-    char *p;
-
-    p = strstr(ch1, ch2);
-    if(p){
-        cout<< p<< endl;
-        printf("%s", p);
-    }
-
     string s1 = "hello wo1rld this is dad ##3 hell8ahh";
     vector<string> s;
     string temp;
