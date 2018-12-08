@@ -30,21 +30,22 @@ string rev_string(string s){ //reverse string and leaves the special char at tha
 
 int main(){
     string s1 = "hello wo1rld this is dad ##3 hell8ahh";
-    vector<string> s;
+    string s;
     string temp;
     for(int i=0; i<s1.length(); i++){
         if(s1[i] != ' '){
             temp.push_back(s1[i]);
         }else{
-            s.push_back(rev_string(temp));
+            s += rev_string(temp);
+            s += " ";
             temp.clear();
         }
         if(i == s1.length()-1){
-            s.push_back(rev_string(temp));
+            s += rev_string(temp);
         }
     }
 
-    print_i_v(s);
+    cout << s << endl;
 
     return 0;
 }
